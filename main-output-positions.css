@@ -1,0 +1,196 @@
+/*
+    This file contains all of the formatting CSS for individual sensor display boxes.
+
+    This setup allows flexibility and adaptability by giving the user the ability to adjust the positions of any such
+    boxes when including new additions, or reorganizing the visual setup of the GUI.
+*/
+
+/*
+    The following are positions for the temperature sensors.
+*/
+#t-1 {
+    position: relative;
+    top: 172px;
+    left: 335px;
+}
+
+#t-2 {
+    position: relative;
+    top: 290px;
+    left: 265px;
+}
+
+#t-3 {
+    position: relative;
+    top: 170px;
+    left: 750px;
+}
+
+#t-4 {
+    position: relative;
+    top: 170px;
+    left: 860px;
+}
+
+#t-5 {
+    position: relative;
+    top: 360px;
+    left: 730px;
+}
+
+#t-6 {
+    position: relative;
+    top: 350px;
+    left: 495px;
+}
+
+#t-7 {
+    position: relative;
+    top: 522px;
+    left: 580px;
+}
+
+#t-8 {
+    position: relative;
+    top: 475px;
+    left: 300px;
+}
+
+#t-9 {
+    position: relative;
+    top: 706px;
+    left: 410px;
+}
+
+#t-10 {
+    position: relative;
+    top: 712px;
+    left: -30px;
+}
+
+/*
+    Sensors 11-13 in particular are for the sensors measuring the inside of the thermal tank.
+*/
+#t-11 {
+    position: relative;
+    top: 355px;
+    left: 587px;
+}
+
+#t-12 {
+    position: relative;
+    top: 484px;
+    left: 515px;
+}
+
+#t-13 {
+    position: relative;
+    top: 623px;
+    left: 445px;
+}
+
+#t-14 {
+    position: relative;
+    top: 80px;
+    left: -695px;
+}
+
+#t-15 {
+    position: relative;
+    top: 80px;
+    left: -550px;
+}
+
+/*
+The following are positions for the flow sensors.
+*/
+#f-1 {
+    position: relative;
+    top: 330px;
+    left: -438px;
+}
+
+#f-2 {
+    position: relative;
+    top: 510px;
+    left: -490px;
+}
+
+#f-3 {
+    position: relative;
+    top: 680px;
+    left: -525px;
+}
+
+/*
+    The following are positions for the solar radiation sensors.
+*/
+#sr-1 {
+    position: relative;
+    top: 105px;
+    left: -500px;
+}
+
+
+#p1_status_indicator {
+    position: relative;
+    background-color: RED;
+    top: 295px;
+    left: 390px;
+    width: 80px;
+}
+
+#p2_status_indicator {
+    position: relative;
+    background-color: RED;
+    top: 460px;
+    left: 387px;
+    width: 80px;
+}
+
+#p3_status_indicator {
+    position: relative;
+    background-color: RED;
+    top: 610px;
+    left: 395px;
+    width: 80px;
+}
+
+#csv_raw_download_button_container {
+    position: relative;
+    top: 0px;
+    left: 1250px;
+}
+
+#csv_raw_download_button {
+    position: relative;
+    width: 175px;
+    height: 50px;
+}
+
+
+
+/*
+    Prototypes for the control part of the project. Currently dysfunctional
+*/
+
+/*
+#ph1 {
+    position: relative;
+    top: 10px;
+    left: 95px;
+}
+
+#ph2 {
+    position: relative;
+    top: 10px;
+    left: 340px;
+}
+
+#btn-container {
+    position: relative;
+    display: block;
+    top: -10px;
+    left: 710px;
+}
+*/
