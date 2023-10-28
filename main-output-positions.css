@@ -9,163 +9,223 @@
     The following are positions for the temperature sensors.
 */
 #t-1 {
-    position: relative;
-    top: 172px;
-    left: 335px;
+    position: absolute;
+    margin: 0px;
+    top: 21.5%;
+    left: 19.8%;
+    width: 3%;
+    height: 2%
 }
 
 #t-2 {
-    position: relative;
-    top: 290px;
-    left: 265px;
+    position: absolute;
+    margin: 0px;
+    top: 36.8%;
+    left: 19.8%;
+    width: 3%;
+    height: 2%
 }
 
 #t-3 {
-    position: relative;
-    top: 170px;
-    left: 750px;
+    position: absolute;
+    margin: 0px;
+    top: 21%;
+    left: 52.5%;
+    width: 3%;
+    height: 2%
 }
 
 #t-4 {
-    position: relative;
-    top: 170px;
-    left: 860px;
+    position: absolute;
+    margin: 0px;
+    top: 21%;
+    left: 63%;
+    width: 3%;
+    height: 2%
 }
 
 #t-5 {
-    position: relative;
-    top: 360px;
-    left: 730px;
+    position: absolute;
+    margin: 0px;
+    top: 45%;
+    left: 59.5%;
+    width: 3%;
+    height: 2%
 }
 
 #t-6 {
-    position: relative;
-    top: 350px;
-    left: 495px;
+    position: absolute;
+    margin: 0px;
+    top: 43.5%;
+    left: 49.5%;
+    width: 3%;
+    height: 2%
 }
 
 #t-7 {
-    position: relative;
-    top: 522px;
-    left: 580px;
+    position: absolute;
+    margin: 0px;
+    top: 60.9%;
+    left: 58.9%;
+    width: 3%;
+    height: 2%
 }
 
 #t-8 {
-    position: relative;
-    top: 475px;
-    left: 300px;
+    position: absolute;
+    margin: 0px;
+    top: 63.5%;
+    left: 46.2%;
+    width: 3%;
+    height: 2%
 }
 
 #t-9 {
-    position: relative;
-    top: 706px;
-    left: 410px;
+    position: absolute;
+    margin: 0px;
+    top: 83%;
+    left: 57%;
+    width: 3%;
+    height: 2%
 }
 
 #t-10 {
-    position: relative;
-    top: 712px;
-    left: -30px;
+    position: absolute;
+    margin: 0px;
+    top: 83.5%;
+    left: 34.5%;
+    width: 3%;
+    height: 2%
 }
 
 /*
     Sensors 11-13 in particular are for the sensors measuring the inside of the thermal tank.
 */
 #t-11 {
-    position: relative;
-    top: 355px;
-    left: 587px;
+    position: absolute;
+    margin: 0px;
+    top: 44.5%;
+    left: 75.2%;
+    width: 3%;
+    height: 2%
 }
 
 #t-12 {
-    position: relative;
-    top: 484px;
-    left: 515px;
+    position: absolute;
+    margin: 0px;
+    top: 60.5%;
+    left: 75.2%;
+    width: 3%;
+    height: 2%
 }
 
 #t-13 {
-    position: relative;
-    top: 623px;
-    left: 445px;
+    position: absolute;
+    margin: 0px;
+    top: 78%;
+    left: 75%;
+    width: 3%;
+    height: 2%
 }
 
 #t-14 {
-    position: relative;
-    top: 50px;
-    left: -695px;
+    position: absolute;
+    margin: 0px;
+    top: 5%;
+    left: 11.5%;
+    width: 3%;
+    height: 2%
 }
 
 #t-15 {
-    position: relative;
-    top: 50px;
-    left: -550px;
+    position: absolute;
+    margin: 0px;
+    top: 5.5%;
+    left: 24%;
+    width: 3%;
+    height: 2%
 }
 
 /*
 The following are positions for the flow sensors.
 */
 #f-1 {
-    position: relative;
-    top: 330px;
-    left: -438px;
+    position: absolute;
+    margin: 0px;
+    top: 41%;
+    left: 35%;
+    width: 3%;
+    height: 2%
 }
 
 #f-2 {
-    position: relative;
-    top: 510px;
-    left: -490px;
+    position: absolute;
+    margin: 0px;
+    top: 63.5%;
+    left: 36%;
+    width: 3%;
+    height: 2%
 }
 
 #f-3 {
-    position: relative;
-    top: 680px;
-    left: -525px;
+    position: absolute;
+    margin: 0px;
+    top: 85%;
+    left: 38%;
+    width: 3%;
+    height: 2%
 }
 
 /*
     The following are positions for the solar radiation sensors.
 */
 #sr-1 {
-    position: relative;
-    top: 105px;
-    left: -500px;
+    position: absolute;
+    margin: 0px;
+    top: 5.5%;
+    left: 47%;
+    width: 3%;
+    height: 2%
 }
 
 
 #p1_status_indicator {
-    position: relative;
+    position: absolute;
     background-color: RED;
-    top: 295px;
-    left: 390px;
-    width: 80px;
+    top: 39%;
+    left: 23%;
+    width: 5%;
+    height: 2.5%;
 }
 
 #p2_status_indicator {
-    position: relative;
+    position: absolute;
     background-color: RED;
-    top: 460px;
-    left: 387px;
-    width: 80px;
+    top: 62.2%;
+    left: 22.4%;
+    width: 5%;
+    height: 2.5%;
 }
 
 #p3_status_indicator {
-    position: relative;
+    position: absolute;
     background-color: RED;
-    top: 610px;
-    left: 395px;
-    width: 80px;
+    top: 83%;
+    left: 23%;
+    width: 5%;
+    height: 2.5%;
 }
 
 #csv_raw_download_button_container {
-    position: relative;
-    top: 0px;
-    left: 1250px;
+    position: absolute;
+    top: 7%;
+    left: 70%;
 }
 
 #csv_raw_download_button {
     position: relative;
-    width: 175px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
 }
 
 

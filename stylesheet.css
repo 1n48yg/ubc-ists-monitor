@@ -26,7 +26,7 @@ div {
     position: relative;
 	background-image: url('backdrop.jpg');
 	background-position: top-left top-left;
-	background-size: 1440px 800px;
+	background-size: 85% 100%;
 	background-repeat: no-repeat;
 	height: 100%;
     width: 100%;

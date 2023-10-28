@@ -121,7 +121,7 @@ var intervalId = window.setInterval(function(){
                             }
                         }
 
-                        document.getElementById('t-1').value = t1;
+                        document.getElementById('t-1').value = t1 + String.fromCharCode(176) + "C";
                         document.getElementById('t-2').value = t2;
                         document.getElementById('t-3').value = t3;
                         document.getElementById('t-4').value = t4;
