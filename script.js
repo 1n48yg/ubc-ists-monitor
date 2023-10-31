@@ -1,4 +1,9 @@
 const FLOW_STATUS_THRESHOLD = 0.5;
+const CELSIUS_SYMBOL = String.fromCharCode(176) + "C";
+const FAHRENHEIT_SYMBOL = String.fromCharCode(176) + "F";
+
+var current_temperature_mode = "celsius";
+var temperature_suffix = '';
 
 /*
     This segment of code refreshes every 1000ms (1 second)
@@ -18,7 +23,8 @@ var intervalId = window.setInterval(function(){
                         outputText = (html[html.length - 2]);
                         let otString = "" + outputText;
 
-                        var t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,f1,f2,f3,sr1;
+                        var tsensor = new Array(15).fill(0);;
+                        var f1,f2,f3,sr1;
                         var p1_status, p2_status, p3_status;
 
                         // Cutting up the line which contains data for every sensor, into integers representing the
@@ -36,49 +42,49 @@ var intervalId = window.setInterval(function(){
                                 switch (a)
                                 {
                                     case "T1":
-                                        t1 = b;
+                                        tsensor[0] = b;
                                         break;
                                     case "T2":
-                                        t2 = b;
+                                        tsensor[1] = b;
                                         break;
                                     case "T3":
-                                        t3 = b;
+                                        tsensor[2] = b;
                                         break;
                                     case "T4":
-                                        t4 = b;
+                                        tsensor[3] = b;
                                         break;
                                     case "T5":
-                                        t5 = b;
+                                        tsensor[4] = b;
                                         break;
                                     case "T6":
-                                        t6 = b;
+                                        tsensor[5] = b;
                                         break;
                                     case "T7":
-                                        t7 = b;
+                                        tsensor[6] = b;
                                         break;
                                     case "T8":
-                                        t8 = b;
+                                        tsensor[7] = b;
                                         break;
                                     case "T9":
-                                        t9 = b;
+                                        tsensor[8] = b;
                                         break;
                                     case "T10":
-                                        t10 = b;
+                                        tsensor[9] = b;
                                         break;
                                     case "T11":
-                                        t11 = b;
+                                        tsensor[10] = b;
                                         break;
                                     case "T12":
-                                        t12 = b;
+                                        tsensor[11] = b;
                                         break;
                                     case "T13":
-                                        t13 = b;
+                                        tsensor[12] = b;
                                         break;
                                     case "T14":
-                                        t14 = b;
+                                        tsensor[13] = b;
                                         break;
                                     case "T15":
-                                        t15 = b;
+                                        tsensor[14] = b;
                                         break;
                                     case "F1":
                                         f1 = b;
@@ -121,21 +127,18 @@ var intervalId = window.setInterval(function(){
                             }
                         }
 
-                        document.getElementById('t-1').value = t1 + String.fromCharCode(176) + "C";
-                        document.getElementById('t-2').value = t2;
-                        document.getElementById('t-3').value = t3;
-                        document.getElementById('t-4').value = t4;
-                        document.getElementById('t-5').value = t5;
-                        document.getElementById('t-6').value = t6;
-                        document.getElementById('t-7').value = t7;
-                        document.getElementById('t-8').value = t8;
-                        document.getElementById('t-9').value = t9;
-                        document.getElementById('t-10').value = t10;
-                        document.getElementById('t-11').value = t11;
-                        document.getElementById('t-12').value = t12;
-                        document.getElementById('t-13').value = t13;
-                        document.getElementById('t-14').value = t14;
-                        document.getElementById('t-15').value = t15;
+                        if (current_temperature_mode == "celsius")
+                        {
+                            temperature_suffix = CELSIUS_SYMBOL;
+                        }
+
+                        for (let i = 0; i < 13; i++)
+                        {
+                            let htmlID = 't-' + (i + 1);
+                            document.getElementById(htmlID).value = tsensor[i] + temperature_suffix;
+                        }
+                        document.getElementById('t-internal').value = tsensor[13] + temperature_suffix;
+                        document.getElementById('t-external').value = tsensor[14] + temperature_suffix;
 
                         document.getElementById('sr-1').value = sr1;
 

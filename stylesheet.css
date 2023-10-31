@@ -6,7 +6,10 @@ html, body {
 }
 
 h1 {
-	margin: 20px;
+	color: white;
+	font-size: 6vh;
+	margin-top: 2vh;
+	margin-left: 10vh;
 }
 
 div {
@@ -19,7 +22,7 @@ div {
     position: relative;
     width: 100%;
     height: 10%;
-    background-color: orange;
+    background-color: #002859;
 }
 
 #main-body-section {
