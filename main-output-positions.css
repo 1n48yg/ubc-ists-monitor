@@ -208,7 +208,7 @@ The following are positions for the flow sensors.
     position: absolute;
     background-color: RED;
     top: 39%;
-    left: 23%;
+    left: 22.7%;
     width: 5%;
     height: 2.5%;
     border-style: solid;
@@ -219,7 +219,7 @@ The following are positions for the flow sensors.
     position: absolute;
     background-color: RED;
     top: 62.2%;
-    left: 22.4%;
+    left: 22.5%;
     width: 5%;
     height: 2.5%;
     border-style: solid;
@@ -231,6 +231,28 @@ The following are positions for the flow sensors.
     background-color: RED;
     top: 83%;
     left: 23%;
+    width: 5%;
+    height: 2.5%;
+    border-style: solid;
+    font-size: 2vh;
+}
+
+#heat_pump_status_indicator {
+    position: absolute;
+    background-color: RED;
+    top: 55.5%;
+    left:6.8%;
+    width: 5%;
+    height: 2.5%;
+    border-style: solid;
+    font-size: 2vh;
+}
+
+#chiller_status_indicator {
+    position: absolute;
+    background-color: RED;
+    top: 76.5%;
+    left:6.8%;
     width: 5%;
     height: 2.5%;
     border-style: solid;

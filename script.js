@@ -25,7 +25,7 @@ var intervalId = window.setInterval(function(){
 
                         var tsensor = new Array(15).fill(0);;
                         var f1,f2,f3,sr1;
-                        var p1_status, p2_status, p3_status;
+                        var p1_status, p2_status, p3_status, heat_pump_status, chiller_status;
 
                         // Cutting up the line which contains data for every sensor, into integers representing the
                         // data of every specific sensor.
@@ -125,6 +125,24 @@ var intervalId = window.setInterval(function(){
                             {
                                 p3_status = false;
                             }
+
+                            // // Heat pump status checking
+                            // if (heat pump condition)
+                            // {
+                                heat_pump_status = true;
+                            // } else
+                            // {
+                            //     heat_pump_status = false;
+                            // }
+                            //
+                            // // Chiller status checking
+                            // if (chiller condition)
+                            // {
+                                chiller_status = true;
+                            // } else
+                            // {
+                            //     chiller_status = false;
+                            // }
                         }
 
                         if (current_temperature_mode == "celsius")
@@ -175,6 +193,26 @@ var intervalId = window.setInterval(function(){
                            document.getElementById('p3_status_indicator').innerHTML = "Status: On";
                            document.getElementById('p3_status_indicator').style.backgroundColor = "GREEN";
                        }
+
+                      if (heat_pump_status == 0)
+                      {
+                          document.getElementById('heat_pump_status_indicator').innerHTML = "Status: Off";
+                          document.getElementById('heat_pump_status_indicator').style.backgroundColor = "RED";
+                      } else if (heat_pump_status == 1)
+                      {
+                          document.getElementById('heat_pump_status_indicator').innerHTML = "Status: On";
+                          document.getElementById('heat_pump_status_indicator').style.backgroundColor = "GREEN";
+                      }
+
+                      if (chiller_status == 0)
+                      {
+                          document.getElementById('chiller_status_indicator').innerHTML = "Status: Off";
+                          document.getElementById('chiller_status_indicator').style.backgroundColor = "RED";
+                      } else if (chiller_status == 1)
+                      {
+                          document.getElementById('chiller_status_indicator').innerHTML = "Status: On";
+                          document.getElementById('chiller_status_indicator').style.backgroundColor = "GREEN";
+                      }
 
                         document.getElementById('serialReadBuffer').innerHTML = "";
 
