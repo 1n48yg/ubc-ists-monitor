@@ -29,7 +29,6 @@ var intervalId = window.setInterval(function(){
 
                         // Cutting up the line which contains data for every sensor, into integers representing the
                         // data of every specific sensor.
-                        // added random comment to demonstrate git
                         if (otString.length >= 220)
                         {
                             otString = otString.slice(20);
