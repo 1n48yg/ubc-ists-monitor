@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-<link rel="stylesheet" type="text/css" href="main-output-positions.css">
+<link rel="stylesheet" type="text/css" href="frontend/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="frontend/main-output-positions.css">
 
 <html>
 
@@ -13,19 +13,10 @@
         <h1>ISTS Monitor</h1>
     </div>
 
-    <!--
-    <div id="test-bed-section">
-        <h2>Testing Area</h2>
-        <input id = "ph1" size = 4 readonly>
-        <input id = "ph2" size = 4 readonly>
-
-        <div id = "btn-container"><button type="button">Toggle LED</button></div>
-    </div>
-    //-->
-
     <div id="main-body-section">
 
             <input type="text" id="t-1" size = 4 readonly>
+            <input type="text" id="test-element" size = 4 readonly>
 
             <input type="text" id="t-2" size = 4 readonly>
 
@@ -70,7 +61,7 @@
             <div id="heat_pump_status_indicator">Status: Off</div>
             <div id="chiller_status_indicator">Status: Off</div>
 
-            <a id = "csv_raw_download_button_container" href="/data.csv" download="data.csv">
+            <a id = "csv_raw_download_button_container" href="/../data/data.csv" download="data.csv">
                 <button id = "csv_raw_download_button">Download All CSV Data</button>
             </a>
 
@@ -78,6 +69,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script src="frontend/script.js"></script>
 </body>
 </html>

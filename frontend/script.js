@@ -10,9 +10,13 @@ var temperature_suffix = '';
 
     It is used to facilitate constant reading of any new data, and correspondingly displaying them on the GUI.
 */
+let test_number = 0;
+
 var intervalId = window.setInterval(function(){
+    document.getElementById("test-element").value = test_number;
+    test_number += 1;
   // main get function, for receiving data from data.csv file
-  $.get('data.csv', function(data) {
+  $.get('/../data/data.csv', function(data) {
                         // Gets the raw input and converts it into the contents of an html element, which allows us
                         // to manipulate the string
                         var outputText = String(data);

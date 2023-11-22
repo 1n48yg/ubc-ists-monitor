@@ -8,6 +8,16 @@
 /*
     The following are positions for the temperature sensors.
 */
+#test-element {
+    width: 50px;
+    height: 20px;
+    left: 290px;
+    top: 40px;
+    position: absolute;
+    background-color: aqua;
+    border-radius: 15%;
+}
+
 #t-1 {
     position: absolute;
     margin: 0px;

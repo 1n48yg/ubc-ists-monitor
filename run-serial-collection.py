@@ -52,7 +52,7 @@ if __name__ == '__main__':
             #####################################################
             e = datetime.datetime.now()
             e = e.replace(microsecond=0)
-            data = open("data.csv", "a", buffering=4096)
+            data = open("frontend/data.csv", "a", buffering=4096)
             data.write(str(e) + " ")
             #####################################################
 
@@ -68,6 +68,13 @@ if __name__ == '__main__':
             data.write("\n")
             data.close()
             #####################################################
+
+
+
+
+
+# Everything below this is an unfinished prototype
+
 
         # reads the current command within the toggle file, the contents of this
         # file is controlled by the user's input with the website
