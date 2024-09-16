@@ -8,7 +8,7 @@ import datetime
 #######################################################
 
 
-COMPORT = 'COM4'
+COMPORT = '/dev/ttyACM1'
 
 
 
@@ -47,13 +47,13 @@ if __name__ == '__main__':
         # If the serial buffer has bytes coming in, basically if new data from
         # sensors is being read
         if ser.in_waiting > 0:
-            # Code for recording the time that a line of sensor data was
-            # obtained at
-            #####################################################
             e = datetime.datetime.now()
             e = e.replace(microsecond=0)
-            data = open("frontend/data.csv", "a", buffering=4096)
-            data.write(str(e) + " ")
+
+            current_date = datetime.datetime.now().date()
+            
+            data = open(f"data/data_{current_date}.csv", "a", buffering=4096)
+            data.write(str(e) + ", ")
             #####################################################
 
             # nextLine is a variable that grabs the next line of serial data
@@ -62,8 +62,17 @@ if __name__ == '__main__':
             # that might interfere with string manipulation.
             # the variable is then printed and recorded within the data file
             #####################################################
-            nextLine = ser.readline().decode('utf-8').rstrip()
-            print(str(e) + " " + nextLine)
+            try:
+                nextLine = ser.readline().decode('utf-8').rstrip()
+            except serial.SerialException as error:
+                print("Error reading serial data to Raspberry Pi")
+                sleep(5)
+                print("Attempting to restart connection")
+                ser = serial.Serial(COMPORT, 9600, timeout=1)
+                ser.reset_input_buffer()
+                data.close()
+                continue
+            print(str(e) + ", " + nextLine)
             data.write(nextLine)
             data.write("\n")
             data.close()

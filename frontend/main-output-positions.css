@@ -1,20 +1,12 @@
-/*
-    This file contains all of the formatting CSS for individual sensor display boxes.
+#clock{
+	top: 0.5%;
+	left: 0.5%;
+}
 
-    This setup allows flexibility and adaptability by giving the user the ability to adjust the positions of any such
-    boxes when including new additions, or reorganizing the visual setup of the GUI.
-*/
-
-/*
-    The following are positions for the temperature sensors.
-*/
-#test-element {
-    width: 50px;
-    height: 20px;
-    left: 290px;
-    top: 40px;
-    position: absolute;
-    background-color: aqua;
+#clock-box{
+    width: 40px;
+    height: 15px;
+    background-color: #CAFCFF;
     border-radius: 15%;
 }
 
@@ -174,8 +166,8 @@
 #sr-1 {
     position: absolute;
     margin: 0px;
-    top: 5%;
-    left: 11.5%;
+    top: 13.5%;
+    left: 7.7%;
     width: 3.5%;
     height: 2%;
     font-size: 2vh;
@@ -197,8 +189,8 @@ The following are positions for the flow sensors.
 #f-2 {
     position: absolute;
     margin: 0px;
-    top: 63.5%;
-    left: 36%;
+    top: 85%;
+    left: 38%;
     width: 3.5%;
     height: 2%;
     font-size: 2vh;
@@ -207,8 +199,8 @@ The following are positions for the flow sensors.
 #f-3 {
     position: absolute;
     margin: 0px;
-    top: 85%;
-    left: 38%;
+	top: 63.5%;
+    left: 36%;
     width: 3.5%;
     height: 2%;
     font-size: 2vh;
@@ -228,8 +220,8 @@ The following are positions for the flow sensors.
 #p2_status_indicator {
     position: absolute;
     background-color: RED;
-    top: 62.2%;
-    left: 22.5%;
+    top: 83%;
+    left: 23%;
     width: 5%;
     height: 2.5%;
     border-style: solid;
@@ -239,8 +231,8 @@ The following are positions for the flow sensors.
 #p3_status_indicator {
     position: absolute;
     background-color: RED;
-    top: 83%;
-    left: 23%;
+    top: 62.2%;
+    left: 22.5%;
     width: 5%;
     height: 2.5%;
     border-style: solid;
@@ -269,19 +261,11 @@ The following are positions for the flow sensors.
     font-size: 2vh;
 }
 
-#csv_raw_download_button_container {
+#download_container {
     position: absolute;
     top: 7%;
     left: 70%;
 }
-
-#csv_raw_download_button {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    font-size: 3vh;
-}
-
 
 
 /*

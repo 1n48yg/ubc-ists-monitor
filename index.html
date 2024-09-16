@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="frontend/stylesheet.css">
-<link rel="stylesheet" type="text/css" href="frontend/main-output-positions.css">
 
 <html>
 
 <head>
     <title>ISTS Monitor</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="main-output-positions.css">
 </head>
 
 <body>
@@ -14,9 +14,13 @@
     </div>
 
     <div id="main-body-section">
-
+			
+			<div id="clock">
+				<text>Real-time clock (seconds):</text>
+				<input type="text" id="clock-box" size = 4 readonly>
+			</div>
+			
             <input type="text" id="t-1" size = 4 readonly>
-            <input type="text" id="test-element" size = 4 readonly>
 
             <input type="text" id="t-2" size = 4 readonly>
 
@@ -61,14 +65,15 @@
             <div id="heat_pump_status_indicator">Status: Off</div>
             <div id="chiller_status_indicator">Status: Off</div>
 
-            <a id = "csv_raw_download_button_container" href="/../data/data.csv" download="data.csv">
-                <button id = "csv_raw_download_button">Download All CSV Data</button>
-            </a>
+            <div id = "download_container">
+                <select id="fileDropdown"></select>
+                <button onclick="downloadFile()">Download Selected File</button>
+            </div>
 
             <label id = "serialReadBuffer" type="text"></label>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="frontend/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
