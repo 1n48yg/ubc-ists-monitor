@@ -1,88 +1,59 @@
-# Imports: serial is for receiving and sending serial signals, time and datetime
-#          are for obtaining the current time, to record timestamps in the data
-#          file
-#######################################################
 import serial
 import time
 import datetime
-#######################################################
-
+import os
 
 COMPORT = '/dev/ttyACM1'
 
-
-
-# Python's way to mark the main function of a program, this is ran at the start
-# of the program
 if __name__ == '__main__':
 
-    # This is for initializing a variable "ser" and associating it with
-    # all signals coming from the COM3 port, for linux or raspberry pi the
-    # port is likely /dev/ttyUCM0 or /dev/ttyUSB0
-    #####################################################
     ser = serial.Serial(COMPORT, 9600, timeout=1)
     ser.reset_input_buffer()
-    #####################################################
 
-    # Opening up files that this script will operate on.
-    # data.txt is the data file that stores the serial signals received from
-    #   arduino, TODO: this will be changed to data.csv eventually
-    # toggle.txt is a buffer file, in this script it is read, and if a valid
-    #   command is received, it will send that instruction back to Arduino via
-    #   a serial signal
-    #####################################################
-    # For reference, the second argument's meaning is specified:
-    # a - is adding to a file
-    # w - is overwriting the file
-    # r - reading from the file
-    #####################################################
-    #data = open("data.txt", "a", buffering=4096)
-    #toggle = open("toggle.txt", "r")
-    #####################################################
-
-
-    # Loop that will keep running until script is killed
     while True:
-        
-        # If the serial buffer has bytes coming in, basically if new data from
-        # sensors is being read
+
         if ser.in_waiting > 0:
-            e = datetime.datetime.now()
-            e = e.replace(microsecond=0)
-
+            current_time = datetime.datetime.now()
+            current_time = current_time.replace(microsecond=0)
             current_date = datetime.datetime.now().date()
-            
-            data = open(f"data/data_{current_date}.csv", "a", buffering=4096)
-            data.write(str(e) + ", ")
-            #####################################################
 
-            # nextLine is a variable that grabs the next line of serial data
-            # sent, converts it to utf-8 format so it can be easily processed
-            # as a string, and rstrip removes any invisible trailing characters
-            # that might interfere with string manipulation.
-            # the variable is then printed and recorded within the data file
-            #####################################################
-            try:
-                nextLine = ser.readline().decode('utf-8').rstrip()
-            except serial.SerialException as error:
-                print("Error reading serial data to Raspberry Pi")
-                sleep(5)
-                print("Attempting to restart connection")
-                ser = serial.Serial(COMPORT, 9600, timeout=1)
-                ser.reset_input_buffer()
-                data.close()
-                continue
-            print(str(e) + ", " + nextLine)
-            data.write(nextLine)
-            data.write("\n")
-            data.close()
-            #####################################################
+            # Extract the year, month, and file path
+            year = current_date.year
+            month = f"{current_date.month:02d}"
+            directory_path = f"data/{year}/{month}"
+
+            # Ensuring directories exist
+            if not os.path.exists(directory_path):
+                os.makedirs(directory_path)
+
+            # Open corresponding csv file and append data to it
+            file_path = f"{directory_path}/data_{year}-{month}-{current_date.day:02d}.csv"
+            with open(file_path, "a", buffering=4096) as data:
+
+                try:
+                    # Read the serial data, decode it, and remove any trailing characters
+                    nextLine = ser.readline().decode('utf-8').rstrip()
+                    # Crude validity check
+                    if (len(nextLine) < 100):
+                        print(f"Error: {nextLine}\n")
+                        continue
+                except serial.SerialException as error:
+                    print("Error reading serial data to Raspberry Pi")
+                    time.sleep(5)
+                    print("Attempting to restart connection")
+                    ser = serial.Serial(COMPORT, 9600, timeout=1)
+                    ser.reset_input_buffer()
+                    continue
+
+                print(f"{current_time}, {nextLine}")
+                data.write(f"{current_time}, ")
+                data.write(f"{nextLine}\n")
 
 
 
 
 
-# Everything below this is an unfinished prototype
+# Everything below this is an unfinished prototype for the control aspect, that requires more website permission setup
 
 
         # reads the current command within the toggle file, the contents of this
